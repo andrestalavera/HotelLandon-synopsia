@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "HotelLandon.Demo-001/1.0.0": {
+        "dependencies": {
+          "HotelLandon.Models": "1.0.0"
+        },
+        "runtime": {
+          "HotelLandon.Demo-001.dll": {}
+        }
+      },
+      "HotelLandon.Models/1.0.0": {
+        "runtime": {
+          "HotelLandon.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HotelLandon.Demo-001/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HotelLandon.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

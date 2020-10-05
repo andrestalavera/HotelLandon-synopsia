@@ -1,0 +1,12 @@
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netstandard2.0\HotelLandon.Data.csprojAssemblyReference.cache
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netstandard2.0\HotelLandon.Data.AssemblyInfoInputs.cache
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netstandard2.0\HotelLandon.Data.AssemblyInfo.cs
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netstandard2.0\HotelLandon.Data.csproj.CoreCompileInputs.cache
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netstandard2.0\HotelLandon.Data.deps.json
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netstandard2.0\HotelLandon.Data.dll
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netstandard2.0\HotelLandon.Data.pdb
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netstandard2.0\HotelLandon.Models.dll
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netstandard2.0\HotelLandon.Models.pdb
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netstandard2.0\HotelLandon.Data.csproj.CopyComplete
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netstandard2.0\HotelLandon.Data.dll
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netstandard2.0\HotelLandon.Data.pdb

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "M+HWXDTtO4v5nbSMbQdq5+7PMXOS63BlmFXmDpacB98gi7KwMfP5MIGAktFXzK6ouBO0dxCmb3aZVDOQ+zIkOA==",
+  "success": true,
+  "projectFilePath": "C:\\Repos\\Synopsia\\HotelLandon.Models\\HotelLandon.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andres\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Andres\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1W5tjPSswEqmJy2RKK9hzHPvFDMGUrc0zkkuMcE3QSqfcigUakJI3JsEfoPqkw1FQxLXvawRrytwWVeb4l4QJQ==",
+  "success": true,
+  "projectFilePath": "C:\\Repos\\Synopsia\\HotelLandon.Demo-Json\\HotelLandon.Demo-Json.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andres\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

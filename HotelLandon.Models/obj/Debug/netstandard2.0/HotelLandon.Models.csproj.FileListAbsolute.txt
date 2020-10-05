@@ -1,0 +1,9 @@
+C:\Repos\Synopsia\HotelLandon.Models\bin\Debug\netstandard2.0\HotelLandon.Models.deps.json
+C:\Repos\Synopsia\HotelLandon.Models\bin\Debug\netstandard2.0\HotelLandon.Models.dll
+C:\Repos\Synopsia\HotelLandon.Models\bin\Debug\netstandard2.0\HotelLandon.Models.pdb
+C:\Repos\Synopsia\HotelLandon.Models\obj\Debug\netstandard2.0\HotelLandon.Models.csprojAssemblyReference.cache
+C:\Repos\Synopsia\HotelLandon.Models\obj\Debug\netstandard2.0\HotelLandon.Models.AssemblyInfoInputs.cache
+C:\Repos\Synopsia\HotelLandon.Models\obj\Debug\netstandard2.0\HotelLandon.Models.AssemblyInfo.cs
+C:\Repos\Synopsia\HotelLandon.Models\obj\Debug\netstandard2.0\HotelLandon.Models.csproj.CoreCompileInputs.cache
+C:\Repos\Synopsia\HotelLandon.Models\obj\Debug\netstandard2.0\HotelLandon.Models.dll
+C:\Repos\Synopsia\HotelLandon.Models\obj\Debug\netstandard2.0\HotelLandon.Models.pdb

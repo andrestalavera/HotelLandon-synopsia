@@ -1,0 +1,15 @@
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netcoreapp3.1\HotelLandon.Data.deps.json
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netcoreapp3.1\HotelLandon.Data.dll
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netcoreapp3.1\HotelLandon.Data.pdb
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netcoreapp3.1\HotelLandon.Models.dll
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netcoreapp3.1\HotelLandon.Models.pdb
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netcoreapp3.1\HotelLandon.Data.csprojAssemblyReference.cache
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netcoreapp3.1\HotelLandon.Data.AssemblyInfoInputs.cache
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netcoreapp3.1\HotelLandon.Data.AssemblyInfo.cs
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netcoreapp3.1\HotelLandon.Data.csproj.CoreCompileInputs.cache
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netcoreapp3.1\HotelLandon.Data.csproj.CopyComplete
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netcoreapp3.1\HotelLandon.Data.dll
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netcoreapp3.1\HotelLandon.Data.pdb
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netcoreapp3.1\HotelLandon.Data.runtimeconfig.json
+C:\Repos\Synopsia\HotelLandon.Data\bin\Debug\netcoreapp3.1\HotelLandon.Data.runtimeconfig.dev.json
+C:\Repos\Synopsia\HotelLandon.Data\obj\Debug\netcoreapp3.1\HotelLandon.Data.genruntimeconfig.cache
