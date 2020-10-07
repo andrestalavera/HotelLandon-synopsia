@@ -1,0 +1,22 @@
+﻿@page
+@model HotelLandon.WebPages.Pages.AddCustomerModel
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Customer.FirstName"/>
+        <input asp-for="Customer.FirstName"
+               type="text" class="form-control" 
+               id="firstNameInput" 
+               aria-describedby="firstNameHelp" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Customer.LastName"/>
+        <input asp-for="Customer.LastName"
+               type="text" class="form-control" 
+               id="lastNameInput" 
+               aria-describedby="lastNameHelp" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter un client</button>
+</form>

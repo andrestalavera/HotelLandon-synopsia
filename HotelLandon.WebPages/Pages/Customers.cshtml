@@ -1,0 +1,20 @@
+﻿@page
+@model HotelLandon.WebPages.Pages.CustomersModel
+@{
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th></th>
+    </tr>
+    @foreach (var customer in Model.Customers)
+    {
+        <tr>
+            <td>@customer.FirstName</td>
+            <td>@customer.LastName</td>
+            <td><a asp-page="Index">Modifier</a></td>
+        </tr>
+    }
+</table>

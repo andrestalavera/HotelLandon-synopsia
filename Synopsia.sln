@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelLandon.Api", "HotelLandon.Api\HotelLandon.Api.csproj", "{D9794F5F-FDAD-43CC-8735-5DFDC27723D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelLandon.Api", "HotelLandon.Api\HotelLandon.Api.csproj", "{D9794F5F-FDAD-43CC-8735-5DFDC27723D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelLandon.Data", "HotelLandon.Data\HotelLandon.Data.csproj", "{3BA2E144-CA3E-4789-89B2-FFABE3DB0A33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelLandon.Data", "HotelLandon.Data\HotelLandon.Data.csproj", "{3BA2E144-CA3E-4789-89B2-FFABE3DB0A33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelLandon.Models", "HotelLandon.Models\HotelLandon.Models.csproj", "{B75F6E7E-3772-49E7-A2A5-F4EE7C24BCEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelLandon.Models", "HotelLandon.Models\HotelLandon.Models.csproj", "{B75F6E7E-3772-49E7-A2A5-F4EE7C24BCEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelLandon.WebPages", "HotelLandon.WebPages\HotelLandon.WebPages.csproj", "{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D9794F5F-FDAD-43CC-8735-5DFDC27723D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,5 +57,23 @@ Global
 		{B75F6E7E-3772-49E7-A2A5-F4EE7C24BCEC}.Release|x64.Build.0 = Release|Any CPU
 		{B75F6E7E-3772-49E7-A2A5-F4EE7C24BCEC}.Release|x86.ActiveCfg = Release|Any CPU
 		{B75F6E7E-3772-49E7-A2A5-F4EE7C24BCEC}.Release|x86.Build.0 = Release|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Debug|x64.Build.0 = Debug|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Debug|x86.Build.0 = Debug|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Release|x64.ActiveCfg = Release|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Release|x64.Build.0 = Release|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Release|x86.ActiveCfg = Release|Any CPU
+		{AEA9A14F-712A-4A3D-AA92-6326EF981DC4}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFF800CC-F6EB-448A-82FA-1B7FEC715088}
 	EndGlobalSection
 EndGlobal

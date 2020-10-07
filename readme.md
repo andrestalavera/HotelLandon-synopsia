@@ -1,6 +1,4 @@
-# Procédure
-
-## Créer les projets
+# Créer les projets
 Créer le projet `HotelLandon.Models` dans le répértoire `C:\Synopsia`.
 
 > Pour créer un projet, il existe la commande `dotnet new [TYPE_PROJET] --name [REPERTOIRE_PROJET]`. _L'option `name` n'est pas indispensable et permet uniquement de créer le projet dans un autre répértoire._
@@ -25,13 +23,15 @@ public Customer(string firstName, string lastName)
 }
 ```
 
-### Exercices
+## Exercices
 1. Créer le projet `HotelLandon.Demo-Csv` dans le répertoire de base, `C:\Synopsia`.
 1. Enregistrer un `HotelLandon.Models.Customer` au format CSV.
 1. Créer le proejt `HotelLandon.Demo-Json` dans le répertoire de base `C:\Synopsia`.
 1. Enregistrer un `HotelLandon.Models.Customer` au format JSON, à l'aide de la librairie `Newtonsoft.Json`.
 
 > Pour ajouter une librairie, il suffit d'utiliser la commande `dotnet-cli` suivante : `dotnet add package [NOM_PACKAGE]`.
+
+# Entity Framework Core
 
 ## Créer la base de données
 
@@ -81,51 +81,7 @@ Pour appliquer les migrations, il suffit d'utiliser la commande `dotnet ef datab
 
 La base de données est créée.
 
-## Créer une WebAPI
-
-### Exercices
-
-1. Créer un projet ASP.NET Core WebAPI nommé `HotelLandon.Api`.
-1. Référencer les projets `HotelLandon.Data` et `HotelLandon.Models`
-1. Créer un contrôleur nommé `CustomersController`
-1. Créer 4 méthodes: 
-    1. `Get` pour obtenir la liste des clients depuis la base de données
-    1. `Post` pour ajouter un client dans la base de données 
-    1. `Put` pour modifier un client existant
-    1. `Delete` pour supprimer un client à partir de son id.
-
-> Deux méthodes pour ce faire : 
-> 1. Laisser ASP.NET Core la gestion des erreurs, des modèles, etc.
->  En utilisant les type des retour de chaque élément (par exemple `[HttpGet] public IEnumerable<Customer> GetAll() { ... }`)
-> 1. Personnaliser le comportement, la gestion des erreurs, etc. (par exemple `[HttpGet] public ActionResult<Customer> Post(Customer c) { ... }`)
-
-### Injection des dépendances
-Pour accéder aux informations de la base de données `HotelLandon`, il est nécessaire d'injecter `HotelLandonContext`. _Voir l'injection de dépendences_.
-
-Dans la classe `Startup`, ajouter le service d'accès aux données :
-```CSharp
-public void ConfigureServices(IServiceCollection services)
-{
-    //...
-    services.AddDbContext<HotelLandonContext>();
-    //...
-}
-```
-
-Puis dans les contrôleurs, l'injecter à travers le contructeur:
-```CSharp
-public class CustomersController : ControlerBase
-{
-    private readonly HotelLandonContext _context;
-
-    public CustomersController(HotelLandonContext context)
-    {
-        _context = context;
-    }
-}
-```
-
-### Accéder aux données
+## Accéder aux données
 Pour lire des données depuis la base de données, avec le contexte :
 ```CSharp
 _context.Customers.ToList();
@@ -150,7 +106,7 @@ query = query.Where(c => c.FirstName.Contains("A"));
 return query.ToList();
 ``` 
 
-### Créer, modifier et supprimer des données
+## Créer, modifier et supprimer des données
 ```CSharp
 _context.Customers.Add(customer);
 _context.SaveChanges();
@@ -166,7 +122,116 @@ _context.Customers.Remove(customer);
 _context.SaveChanges();
 ```
 
-## Utiliser Swagger pour afficher la liste des API 
+# Créer une solution ...et passer à Visual Studio !
+Pour créer une solution avec `dotnet-cli`, il suffit d'utiliser la commande `dotnet new sln` et pour ajouter les projets : `dotnet sln add [RELATIVE_PATH]`
+
+Dans `C:\Synopsia`, taper les commandes suivantes :
+- `dotnet new sln`
+- `dotnet sln add HotelLandon.Data`
+- `dotnet sln add HotelLandon.Models`
+
+# ASP.NET Core
+
+## Injection des dépendances
+Pour accéder aux informations de la base de données `HotelLandon`, il est nécessaire d'injecter `HotelLandonContext`. _Voir l'injection de dépendences_.
+
+Dans la classe `Startup`, ajouter le service d'accès aux données :
+```CSharp
+public void ConfigureServices(IServiceCollection services)
+{
+    //...
+    services.AddDbContext<HotelLandonContext>();
+    //...
+}
+```
+
+Puis dans les contrôleurs, l'injecter à travers le contructeur des contrôleurs :
+```CSharp
+public class CustomersController : ControlerBase
+{
+    private readonly HotelLandonContext _context;
+
+    public CustomersController(HotelLandonContext context)
+    {
+        _context = context;
+    }
+}
+```
+
+...ou des Pages Razor :
+```
+@inject HotelLandonContext context;
+```
+
+...ou du contructeur du code behind de la page Razor :
+```CSharp
+private readonly HotelLandonContext _context;
+public MyPage(HotelLandonContext context) 
+{
+    _context = context;
+}
+```
+
+## Configuration
+
+Pour personnaliser la configuration d'une application ASP.NET Core, on peut utiliser l'interface `IConfiguration` et l'injecter, via le constructeur de de la classe `Startup`.
+
+Dans l'ordre, la configuration est lue de manière suivante :
+
+- `X:\Users\%User%\AppData\Roaming\Microsoft\UserSecrets\Projet\secrets.json` ;
+- Variables d'environnement ;
+- `%Projet%\appsettings.json` (le nom du fichier peut personnalisé dans la configuration de la classe `Startup`).
+
+Pour la configuration suivante : 
+```JSON
+{
+    "Section_01": {
+        "Property_01" : "Value_01",
+        "Property_02" : "Value_02",
+        "Property_03" : 3
+    },
+    "Section_02": {
+        "Property_01" : "Value_01",
+        "Property_02" : "Value_02",
+        "Property_03" : 3
+    }
+}
+```
+Pour accéder à la configuration : 
+```CSharp
+// classe Startup, méthode ConfigureServices(IServiceCollection)
+services.Configure<Section>(Configuration.GetSection("Section_01"));
+
+// classe Section
+public class Section
+{
+    public string Property_01 { get; set; }
+    public string Property_02 { get; set; }
+    public int Property_03 { get; set; }
+}
+```
+
+Dans une page Razor :
+```
+@inject Microsoft.Extensions.Options.IOption<Section> sectionOptions
+
+<h1>@sectionOptions.Value.Property_03</h1>
+```
+
+Dans un contrôleur MVC :
+
+```CSharp
+public class MyController : Controller
+{
+    private readonly Section _section;
+    public MyController(IOptions<Section> sectionOptions)
+    {
+        _section = sectionOptions.Value;
+    }
+}
+```
+
+## Utiliser un Middleware (Swagger)
 Swagger utilise le standard OpenAPI pour générer le JSON qui sera lu dans l'interface SwaggerUI.
 
 Installer le package `Swashbuckle.AspNetCore`
@@ -181,15 +246,6 @@ Configurer Swagger et SwaggerUI :
 app.UseSwagger();
 app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1"));
 ```
-
-## Créer une solution ...et passer à Visual Studio !
-Pour créer une solution avec `dotnet-cli`, il suffit d'utiliser la commande `dotnet new sln` et pour ajouter les projets : `dotnet sln add [RELATIVE_PATH]`
-
-Dans `C:\Synopsia`, taper les commandes suivantes :
-- `dotnet new sln`
-- `dotnet sln add HotelLandon.Api`
-- `dotnet sln add HotelLandon.Data`
-- `dotnet sln add HotelLandon.Models`
 
 ## Créer son propre `Middleware`
 
@@ -230,3 +286,145 @@ La classe `MyMiddleware` contient un constructeur avec un `RequestDelegate` qui 
 
 La méthode d'extension `UseMyMiddleware()` ajoute à `IApplicationBuilder` la méthode permettant de référencer `MyMiddleware` dans la pipeline ASP.NET Core.
 
+## WebApi
+Les API d'ASP.NET Core utilisent le pattern MVC. Chaque contrôleur doit hériter au moins de la classe `ControllerBase`.
+
+Les méthodes doivent être décorées avec un attribut permettant d'indiquer la méthode HTTP : `HttpGetAttribute`, `HttpPostAttribute`, `HttpPutAttribute`, `HttpDeleteAttribute`, etc.
+```CSharp
+[HttpGet]
+public IActionResult Get() 
+{ 
+    return Ok(); 
+}
+```
+
+Il est possible d'écrire ses méthodes de 2 manières : 
+
+Laisser ASP.NET Core la gestion des erreurs, des modèles, etc.
+En utilisant les type des retour de chaque élément 
+```CSharp 
+[HttpGet]
+public IEnumerable<Customer> GetAll() 
+{ 
+    /*...*/ 
+}
+```
+
+Personnaliser le comportement, la gestion des erreurs, etc. 
+```CSharp
+[HttpGet]
+public ActionResult<Customer> Get(int id)
+{
+    if (id < 0)
+    {
+        return BadRequest("L'Id doit être entier")
+    }
+    Customer customer = _context.Customers.Find(id);
+    if (customer == null)
+    {
+        return NotFound("Le client n'existe pas");
+    }
+    return Ok(customer);
+}
+
+[HttpPost]
+public ActionResult<Customer> Post(Customer c) 
+{
+    if (ModelState.IsValid) // vérification par rapport au modèle
+    {
+        if (c.HasErrors)
+        {
+            return BadRequest("Le client contient des erreurs.");
+        }
+        /*...*/
+        return Created("Get/" + c.Id, c.Id);
+    }
+    else 
+    {
+        return BadRequest("Le modèle n'est pas bon.");
+    }
+}
+```
+
+### Exercices
+
+1. Créer un projet ASP.NET Core WebAPI nommé `HotelLandon.Api`.
+1. Référencer les projets `HotelLandon.Data` et `HotelLandon.Models`
+1. Créer un contrôleur nommé `CustomersController`
+1. Créer 4 méthodes: 
+    1. `Get` pour obtenir la liste des clients depuis la base de données
+    1. `Post` pour ajouter un client dans la base de données 
+    1. `Put` pour modifier un client existant
+    1. `Delete` pour supprimer un client à partir de son id.
+
+## UI
+
+### RazorPages
+
+Créer un projet `HotelLandon.WebPages`. La classe Startup est légèrement différente. Elle enregistre dans le `IServiceCollection` le module `RazorPages` avec la méthode d'extension `AddRazorPages()`.
+
+Cet UI va nous permettre d'afficher et de créer des clients. Il existe deux manières de procéder : 
+
+1. Chercher les informations via une API.
+1. Se connecter en direct.
+
+Pour la première version, il est nécessaire d'enregistrer un `System.Net.HttpClient` dans le `IServiceCollection` d'ASP.NET Core.
+```CSharp
+services.AddHttpClient("ApiClient", h => h.BaseAddress = new Uri(Configuration["ApiUrl"]));
+```
+
+Il est possible d'injecter le client http dans chaque page razor, via le constructeur du code behind de la page Razor :
+
+`Index.cshtml`
+```
+@page // toutes les pages doivent avoir cette ligne
+@model IndexModel // pas obligatoire
+@{
+    // bloc de code C# (razor)
+}
+
+<table>
+    <tr>
+        <th>Prénom</th>
+        <th>Nom de famille<th>
+    </tr>
+
+    @foreach (Customer customer in Model.Customers)
+    {
+        <tr>
+            <td>
+                @customer.FirstName
+            </td>
+            <td>
+                @customer.LastName
+            </td>
+        </tr>
+    }
+</table>
+```
+
+`Index.cshtml.cs`
+```
+public class IndexModel 
+{
+    private readonly IHttpClientFactory _httpClientFactory;
+
+    public IEnumerable<Customer> Customers { get; set; }
+
+    public IndexModel(IHttpClientFactory httpClientFactory)
+    {
+        _httpClientFactory = httpClientFactory;
+    }
+
+    public async Task OnGetAsync()
+    {
+        HttpClient httpClient = _httpClientFactory.CreateClient("ApiClient");
+        // HTTP Get BaseAddress + Customers
+        string json = await httpClient.GetStringAsync("Customers");
+        // Parser (déserialiser)
+        Customers = JsonConvert.DeserializeObject<IEnumerable<Customer>>(json);
+    }
+}
+```
+
+### MVC
