@@ -1,10 +1,12 @@
 using HotelLandon.Data;
 using HotelLandon.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace HotelLandon.Api.Controllers
 {
@@ -24,7 +26,8 @@ namespace HotelLandon.Api.Controllers
         [HttpGet]
         public IEnumerable<Customer> GetAll(string search)
         {
-            IEnumerable<Customer> query = _context.Customers; // SELECT * FROM Customers
+            IEnumerable<Customer> query = _context.Customers
+                .Include(c => c.Reservations); // SELECT * FROM Customers C, Reservations R WHERE C.ID = R.ID
             if(!string.IsNullOrWhiteSpace(search))
             {
                 // WHERE FirstName LIKE '%(search)%' 

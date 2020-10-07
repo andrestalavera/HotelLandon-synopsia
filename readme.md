@@ -428,3 +428,41 @@ public class IndexModel
 ```
 
 ### MVC
+
+Pour gérer les vues, les contrôleurs doivent hériter de la classe `Controller`.
+
+Les vues sont dans le répértoire `Views`. Chaque contrôleur doit avoir un dossier du même nom.
+- Project
+    - Controllers
+        - **Home**Controller.cs
+            - `IActionResult Index()`
+        - **Customers**Controller.cs
+            - `IActionResult Index()`
+            - `IActionResult Details(int id)`
+    - Views
+        - **Home**
+            - *Index*.cshtml
+        - **Customers**
+            - *Index*.cshtml
+            - *Details*.cshtml
+    - Models
+        - Customers
+        
+
+
+
+Les actions sont par défaut des méthodes HTTP GET et doivent retourner une `ViewResult` (ou tout autre objet héritant de `IActionResult`).
+
+La méthode `View` peut contenir le nom de la vue et un modèle.
+
+```CSharp
+public IActionResult Index()
+{
+    // do something here to get a model
+    return View(model);
+}
+```
+
+> Andrés Talavera 
+> andres.talavera@ideastud.io
+> +33 6 25 00 19 31

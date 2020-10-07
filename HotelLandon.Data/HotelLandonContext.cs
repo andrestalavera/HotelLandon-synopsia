@@ -7,6 +7,7 @@ namespace HotelLandon.Data
     public class HotelLandonContext : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

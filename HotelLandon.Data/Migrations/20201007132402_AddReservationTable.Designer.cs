@@ -4,14 +4,16 @@ using HotelLandon.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HotelLandon.Data.Migrations
 {
     [DbContext(typeof(HotelLandonContext))]
-    partial class HotelLandonContextModelSnapshot : ModelSnapshot
+    [Migration("20201007132402_AddReservationTable")]
+    partial class AddReservationTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
